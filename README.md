@@ -14,4 +14,4 @@
 
 Download and install the [workflow][download].
 
-[download]: https://github.com/alboompro/workflow-docker/releases/download/v1.1/Docker.alfredworkflow
+[download]: https://github.com/alboompro/workflow-docker/releases/download/v1.2/Docker.alfredworkflow
