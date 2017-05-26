@@ -1,7 +1,5 @@
 # Docker Workflow for Alfred
 
-# Dark Sky Workflow for Alfred
-
 ![screenshot][screenshot]
 
 [screenshot]: https://i.imgur.com/f1D7PLA.png
