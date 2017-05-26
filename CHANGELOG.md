@@ -1,6 +1,13 @@
 Changelog
 =========
 
+Version 1.2 – 2017-05-26
+------------------------
+
+### Features
+
+* Added `option | alt` action in docker machine to open instance's shell
+
 Version 1.1 – 2017-05-26
 ------------------------
 

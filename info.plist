@@ -47,6 +47,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>B0EA5789-093F-4229-A93F-3CD2BBA6F4A6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C2F9A6F9-9AFD-411E-B2D5-9909A13FB27A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>B896570E-9599-42E4-86BC-C6F559371F7D</key>
 		<array>
 			<dict>
@@ -79,12 +92,35 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>B0EA5789-093F-4229-A93F-3CD2BBA6F4A6</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Open shell for selected Docker machine</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>BB77CECD-D37F-4D9D-A45F-86B2968654CF</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>C31B96EF-4BE5-495E-ADD5-609E04767DFC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>C2F9A6F9-9AFD-411E-B2D5-9909A13FB27A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CEB8E9B4-DB83-4A95-A12A-408C3540E5A3</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -171,6 +207,27 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Docker</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>CEB8E9B4-DB83-4A95-A12A-408C3540E5A3</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -239,27 +296,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Docker</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>CEB8E9B4-DB83-4A95-A12A-408C3540E5A3</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -285,10 +321,42 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>/usr/local/bin/docker exec -ti {query} sh</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.terminalcommand</string>
+			<key>uid</key>
+			<string>C2F9A6F9-9AFD-411E-B2D5-9909A13FB27A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>matchmode</key>
+				<integer>1</integer>
+				<key>matchstring</key>
+				<string>\|.+</string>
+				<key>replacestring</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.replace</string>
+			<key>uid</key>
+			<string>B0EA5789-093F-4229-A93F-3CD2BBA6F4A6</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>dc stop</string>
+				<string>dcstop</string>
 				<key>subtext</key>
 				<string></string>
 				<key>text</key>
@@ -376,7 +444,7 @@
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>dc start</string>
+				<string>dcstart</string>
 				<key>subtext</key>
 				<string></string>
 				<key>text</key>
@@ -417,6 +485,13 @@
 	<string>Changelog
 =========
 
+Version 1.2 – 2017-05-26
+------------------------
+
+### Features
+
+* Added `option | alt` action in docker machine to open instance's shell
+
 Version 1.1 – 2017-05-26
 ------------------------
 
@@ -439,37 +514,44 @@ Version 1.0 - 2017-05-25
 		<key>16039760-F173-4AB8-9C73-DA7401D5DE23</key>
 		<dict>
 			<key>xpos</key>
-			<integer>250</integer>
+			<integer>280</integer>
 			<key>ypos</key>
-			<integer>20</integer>
+			<integer>10</integer>
 		</dict>
 		<key>724653C3-37C9-4DB2-AF78-BFB3B2740E17</key>
 		<dict>
 			<key>xpos</key>
-			<integer>40</integer>
+			<integer>30</integer>
 			<key>ypos</key>
-			<integer>460</integer>
+			<integer>590</integer>
 		</dict>
 		<key>9635BD0B-F6CD-4F38-B60F-A3BD966613C1</key>
 		<dict>
 			<key>xpos</key>
-			<integer>460</integer>
+			<integer>670</integer>
 			<key>ypos</key>
-			<integer>350</integer>
+			<integer>480</integer>
 		</dict>
 		<key>A3010F2B-8B4C-4980-ACFD-79AD320699C8</key>
 		<dict>
 			<key>xpos</key>
-			<integer>250</integer>
+			<integer>280</integer>
 			<key>ypos</key>
-			<integer>460</integer>
+			<integer>590</integer>
+		</dict>
+		<key>B0EA5789-093F-4229-A93F-3CD2BBA6F4A6</key>
+		<dict>
+			<key>xpos</key>
+			<integer>280</integer>
+			<key>ypos</key>
+			<integer>380</integer>
 		</dict>
 		<key>B1AC9807-301B-4765-BBAD-FE501716F61B</key>
 		<dict>
 			<key>xpos</key>
-			<integer>460</integer>
+			<integer>670</integer>
 			<key>ypos</key>
-			<integer>460</integer>
+			<integer>590</integer>
 		</dict>
 		<key>B896570E-9599-42E4-86BC-C6F559371F7D</key>
 		<dict>
@@ -481,41 +563,48 @@ Version 1.0 - 2017-05-25
 		<key>BB77CECD-D37F-4D9D-A45F-86B2968654CF</key>
 		<dict>
 			<key>xpos</key>
-			<integer>40</integer>
+			<integer>30</integer>
+			<key>ypos</key>
+			<integer>480</integer>
+		</dict>
+		<key>C2F9A6F9-9AFD-411E-B2D5-9909A13FB27A</key>
+		<dict>
+			<key>xpos</key>
+			<integer>410</integer>
 			<key>ypos</key>
 			<integer>350</integer>
 		</dict>
 		<key>C31B96EF-4BE5-495E-ADD5-609E04767DFC</key>
 		<dict>
 			<key>xpos</key>
-			<integer>250</integer>
+			<integer>280</integer>
 			<key>ypos</key>
-			<integer>350</integer>
+			<integer>480</integer>
 		</dict>
 		<key>CEB8E9B4-DB83-4A95-A12A-408C3540E5A3</key>
 		<dict>
 			<key>xpos</key>
-			<integer>460</integer>
+			<integer>680</integer>
 			<key>ypos</key>
-			<integer>130</integer>
+			<integer>10</integer>
 		</dict>
 		<key>DA6FF8E7-C696-47BD-BC59-0AE4135D0164</key>
 		<dict>
 			<key>xpos</key>
-			<integer>250</integer>
+			<integer>280</integer>
 			<key>ypos</key>
 			<integer>130</integer>
 		</dict>
 		<key>EF91B926-99B7-4C18-99F8-21175534EEDC</key>
 		<dict>
 			<key>xpos</key>
-			<integer>250</integer>
+			<integer>280</integer>
 			<key>ypos</key>
 			<integer>240</integer>
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>1.1</string>
+	<string>1.2</string>
 	<key>webaddress</key>
 	<string>https://developers.alboompro.com/</string>
 </dict>
